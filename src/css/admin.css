@@ -1,0 +1,30 @@
+.sidebar {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  background-color: #1976d2;
+  width: 300px;
+  height: 100vh;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 30px;
+  a {
+    color: #fff;
+    margin-left: 30px;
+    padding: 20px;
+    width: 80%;
+    border-radius: 6px;
+    &:hover {
+      background-color: rgba(139, 176, 104, 0.42);
+    }
+  }
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}

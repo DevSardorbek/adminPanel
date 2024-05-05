@@ -1,0 +1,11 @@
+.manage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 300px;
+}
+.form_section {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
