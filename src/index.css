@@ -18,3 +18,9 @@ a:hover {
 .wrapper {
   margin-top: 60px;
 }
+.line {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 70px;
+}

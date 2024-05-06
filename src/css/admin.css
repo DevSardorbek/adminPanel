@@ -20,6 +20,9 @@
     &:hover {
       background-color: rgba(139, 176, 104, 0.42);
     }
+    &.active {
+      background-color: #2d363fae;
+    }
   }
 }
 .header {

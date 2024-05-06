@@ -1,0 +1,137 @@
+.banner__swiper video,
+.banner__swiper img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+.banner__item {
+  margin-top: 100px;
+  border-radius: 15px;
+  img {
+    position: relative;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .banner__content {
+    position: absolute;
+    left: 100px;
+    top: 90px;
+    width: 601.26px;
+    h2 {
+      font-family: sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 72px;
+      color: #253d4e;
+    }
+    p {
+      font-family: sans-serif;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      color: #7e7e7e;
+      margin-top: 31px;
+      margin-bottom: 65px;
+    }
+    .banner_input {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 450px;
+      background-color: #fff;
+      border-radius: 50px;
+      input {
+        width: 292px;
+        padding: 22px 38px;
+        border-radius: 50px;
+        border: none;
+      }
+      button {
+        padding: 22px 40px;
+        border-radius: 50px;
+        background-color: #3bb77e;
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: center;
+        border: none;
+        color: #fff;
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .banner__item {
+    img {
+      width: 100%;
+    }
+    .banner__content {
+      width: 100%;
+      h2 {
+        font-size: 60px;
+      }
+      P {
+        font-size: 25px;
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  .banner__item {
+    img {
+      width: 100%;
+    }
+    .banner__content {
+      gap: 20px;
+      width: 100%;
+      h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        align-items: center;
+      }
+      P {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    }
+    .banner_input {
+      flex-direction: column;
+      background: transparent !important;
+      gap: 20px;
+      button {
+        padding: 14px 25px !important;
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .banner__item {
+    img {
+      width: 100%;
+      height: 50vh;
+    }
+    .banner__content {
+      gap: 20px;
+      width: 100%;
+      h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        align-items: center;
+      }
+      P {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    }
+    .banner_input {
+      flex-direction: column;
+      background: transparent !important;
+      gap: 20px;
+      button {
+        padding: 14px 25px !important;
+      }
+    }
+  }
+}

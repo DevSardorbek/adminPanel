@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import Admin from "./pages/home/admin/Admin";
 import ManageProduct from "./pages/home/admin/manage-product/ManageProduct";
 import CreateProduct from "./pages/home/admin/create-product/CreateProduct";
+import Dashboad from "./pages/home/admin/dashboad/Dashboad";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />}>
+          <Route path="" element={<Dashboad />} />
           <Route path="manage-product" element={<ManageProduct />} />
           <Route path="create-product" element={<CreateProduct />} />
         </Route>

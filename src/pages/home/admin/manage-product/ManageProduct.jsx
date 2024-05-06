@@ -1,27 +1,32 @@
 import React, { useState } from "react";
 import Products from "../../../../components/products/Products";
 import "./manage.css";
-
+import axios from "../../../../components/api/Api";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+const initislState = {
+  title: "",
+  description: "",
+  price: "",
+  url: "",
+};
 const ManageProduct = () => {
-  // Yangi mahsulot ma'lumotlarini saqlash uchun holatlar
-  const [newProduct, setNewProduct] = useState({
-    title: "",
-    description: "",
-    price: "",
-    url: "",
-  });
+  const [newProduct, setNewProduct] = useState(initislState);
 
-  // Yangi mahsulotni saqlash uchun funktsiya
   const handleAddProduct = () => {
-    // Yangi mahsulot ma'lumotlarini yuborish
     console.log(newProduct);
-    // Bu yerdagi log-larni serverga yuborish uchun API-ni chaqirish mumkin
+    axios
+      .post("/products", newProduct)
+      .then((res) => {
+        console.log(res);
+        toast.success("Wow so easy!");
+        setNewProduct(initislState);
+      })
+      .catch((err) => console.log(err));
   };
 
-  // Inputlardagi qiymatlarni yangilash uchun funktsiya
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // Yangi mahsulot ma'lumotlarini yangilash
     setNewProduct({
       ...newProduct,
       [name]: value,
@@ -32,6 +37,7 @@ const ManageProduct = () => {
     <div className="manage">
       <form className="form_section">
         <input
+          required
           type="text"
           placeholder="Title"
           name="title"
@@ -40,30 +46,25 @@ const ManageProduct = () => {
         />
         <input
           type="text"
+          required
           placeholder="Description"
           name="description"
           value={newProduct.description}
           onChange={handleChange}
         />
         <input
-          type="text"
+          required
+          type="number"
           placeholder="Price"
           name="price"
           value={newProduct.price}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          placeholder="Image URL"
-          name="url"
-          value={newProduct.url}
           onChange={handleChange}
         />
         <button type="button" onClick={handleAddProduct}>
           Add Product
         </button>
       </form>
-      <Products />
+      <ToastContainer />
     </div>
   );
 };
